@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foodie — Fresh & Fast</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- HEADER -->
   <header>
     <div class="container header-container">
@@ -20,17 +19,20 @@
       <!-- Navigation Menu -->
       <nav id="nav-menu">
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="#">Home</a></li>
           <li><a href="#menu">Menu</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Order Now Button -->
+      <a href="javascript:void(0)" class="btn" onclick="showOrderSection()">Order Now</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="home">
+  <section class="hero">
     <div class="container hero-content">
       <div class="hero-text">
         <h1>Fresh, Fast & Delicious</h1>
@@ -38,76 +40,217 @@
         <a href="#menu" class="btn">Explore Menu</a>
       </div>
       <div class="hero-image">
-        <img src="https://via.placeholder.com/400" alt="Delicious food">
+        <img src="ico.png" alt="Delicious food">
       </div>
     </div>
   </section>
 
-  <!-- MENU -->
-  <section id="menu">
-    <h2 class="section-title">Our Menu</h2>
-    <div class="container menu-grid">
-      <div class="card">
-        <img src="https://via.placeholder.com/300" alt="Pizza">
-        <h3>Pizza</h3>
-        <p>Cheesy and delicious</p>
-        <span>$12</span>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/300" alt="Burger">
-        <h3>Burger</h3>
-        <p>Juicy and filling</p>
-        <span>$10</span>
+  <!-- POPULAR DISHES -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <h2 class="section-title">Popular Dishes</h2>
+      <div class="menu-grid">
+        <div class="card">
+          <img src="cheesy.jpeg" alt="Burger">
+          <h3>Cheesy Burger</h3>
+          <p>Juicy beef patty with melted cheese, fresh veggies, and a soft bun.</p>
+          <span>$8.99</span>
+        </div>
+        <div class="card">
+          <img src="pizza.jpeg" alt="Pizza">
+          <h3>Margherita Pizza</h3>
+          <p>Fresh mozzarella, basil leaves, and rich tomato sauce.</p>
+          <span>$12.50</span>
+        </div>
+        <div class="card">
+          <img src="salad.jpeg" alt="Salad">
+          <h3>Greek Salad</h3>
+          <p>Crisp lettuce, feta cheese, olives, and fresh dressing.</p>
+          <span>$6.50</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FEATURES -->
   <section id="features" class="features">
-    <h2 class="section-title">Why Choose Us</h2>
-    <div class="container features-grid">
-      <div class="feature">
-        <h3>Fast Delivery</h3>
-        <p>We deliver your order in 30 minutes or less.</p>
+    <div class="container">
+      <h2 class="section-title">Why Choose Foodie?</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <h3>Fresh Ingredients</h3>
+          <p>We use only the freshest ingredients for your meals.</p>
+        </div>
+        <div class="feature">
+          <h3>Fast Delivery</h3>
+          <p>Your order will be at your doorstep in no time.</p>
+        </div>
+        <div class="feature">
+          <h3>Great Taste</h3>
+          <p>Our recipes are crafted to satisfy your taste buds.</p>
+        </div>
       </div>
-      <div class="feature">
-        <h3>Fresh Ingredients</h3>
-        <p>Only the best and freshest ingredients go into our dishes.</p>
+    </div>
+  </section>
+
+  <!-- ORDER NOW (Hidden by default) -->
+  <section id="order-section" class="order" style="display: none;">
+    <div class="container">
+      <h2 class="section-title">Order Now</h2>
+      <p class="order-subtext">Fill out your details and get your food delivered to your doorstep!</p>
+      
+      <div id="order-card" class="order-card">
+        <form id="order-form">
+          <!-- Customer Details -->
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Delivery Address</label>
+            <textarea id="address" name="address" rows="3" placeholder="Street, City, ZIP" required></textarea>
+          </div>
+
+          <!-- Order Details -->
+          <div class="form-group">
+            <label for="dish">Select Dish</label>
+            <select id="dish" name="dish" required>
+              <option value="">-- Choose a dish --</option>
+              <option>Cheesy Burger - $8.99</option>
+              <option>Margherita Pizza - $12.50</option>
+              <option>Greek Salad - $6.50</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+          </div>
+
+          <!-- Billing Info -->
+          <h3 class="billing-title">Billing Information</h3>
+          <div class="form-group">
+            <label for="cardname">Name on Card</label>
+            <input type="text" id="cardname" name="cardname" placeholder="John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cardnumber">Card Number</label>
+            <input type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9012 3456" required>
+          </div>
+
+          <div class="form-group-inline">
+            <div>
+              <label for="expiry">Expiry Date</label>
+              <input type="month" id="expiry" name="expiry" required>
+            </div>
+            <div>
+              <label for="cvv">CVV</label>
+              <input type="password" id="cvv" name="cvv" placeholder="123" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn">Place Order</button>
+        </form>
+      </div>
+
+      <!-- Thank You Message -->
+      <div id="thank-you" style="display:none;">
+        <h3>✅ Thank you for ordering!</h3>
+        <p>Your delicious food is on its way. 🍔🍕🥗</p>
+        <button class="btn" onclick="showTrackSection()">Track My Order</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK MY ORDER -->
+  <section id="track-section" class="track" style="display: none;">
+    <div class="container">
+      <h2 class="section-title">Track My Order</h2>
+      <div class="progress-container">
+        <div class="progress-step">Order Received</div>
+        <div class="progress-step">Preparing</div>
+        <div class="progress-step">Out for Delivery</div>
+        <div class="progress-step">Delivered</div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <p class="contact-subtext">We'd love to hear from you!</p>
-    <div class="contact-card">
-      <form>
-        <div class="form-group">
-          <input type="text" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-          <textarea placeholder="Your Message" rows="4"></textarea>
-        </div>
-        <button class="btn">Send Message</button>
-      </form>
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <p class="contact-subtext">Have a question or feedback? Let’s talk!</p>
+      <div class="contact-card">
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Foodie. All Rights Reserved.</p>
+    <div class="container footer-container">
+      <p>© 2025 Foodie. All rights reserved.</p>
+      <p>Made with ❤️ for food lovers.</p>
+    </div>
   </footer>
 
   <!-- JS -->
   <script>
+    // Mobile Menu Toggle
     document.getElementById('hamburger').addEventListener('click', function () {
       document.getElementById('nav-menu').classList.toggle('active');
     });
-  </script>
 
+    function showOrderSection() {
+      const orderSection = document.getElementById("order-section");
+      orderSection.style.display = "block";
+      orderSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.getElementById("order-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("order-card").style.display = "none";
+      document.getElementById("thank-you").style.display = "block";
+      document.getElementById("order-section").scrollIntoView({ behavior: "smooth" });
+    });
+
+    function showTrackSection() {
+      const trackSection = document.getElementById("track-section");
+      trackSection.style.display = "block";
+      trackSection.scrollIntoView({ behavior: "smooth" });
+
+      const steps = document.querySelectorAll(".progress-step");
+      let stepIndex = 0;
+      const interval = setInterval(() => {
+        if (stepIndex < steps.length) {
+          steps[stepIndex].classList.add("active");
+          stepIndex++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 2000);
+    }
+  </script>
 </body>
 </html>
