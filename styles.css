@@ -14,23 +14,25 @@ nav a:hover::after { width: 100%; }
 .btn { background: #ff4d4d; color: #fff; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 500; transition: 0.3s ease; }
 .btn:hover { background: #e63e3e; transform: translateY(-2px); }
 
-/* HAMBURGER MENU DEFAULT */
+/* HAMBURGER MENU */
 .hamburger {
   display: none;
-  font-size: 1.8rem;
+  font-size: 26px;
   cursor: pointer;
   color: #ff4d4d;
+  background: none;
+  border: none;
 }
 
 /* HERO */
 .hero { display: flex; align-items: center; padding: 60px 0; }
 .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-.hero-text h1 { font-size: 2.5rem; margin-bottom: 15px; animation: fadeInUp 1s ease forwards; }
-.hero-text p { margin-bottom: 20px; color: #555; animation: fadeInUp 1.2s ease forwards; }
-.hero-image img { max-width: 400px; border-radius: 20px; animation: fadeIn 1.5s ease forwards; }
+.hero-text h1 { font-size: 2.5rem; margin-bottom: 15px; }
+.hero-text p { margin-bottom: 20px; color: #555; }
+.hero-image img { max-width: 400px; border-radius: 20px; }
 
 /* MENU */
-.section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; animation: fadeInUp 1s ease forwards; }
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; }
 .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 .card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .card:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
@@ -48,73 +50,29 @@ nav a:hover::after { width: 100%; }
 .feature h3 { margin-bottom: 12px; font-size: 1.3rem; color: #ff4d4d; }
 .feature p { color: #555; font-size: 1rem; line-height: 1.5; }
 
-/* ORDER NOW */
-.order { padding: 60px 0; background: #fff; }
-.order-subtext { text-align: center; color: #555; margin-bottom: 30px; }
-.order-card { max-width: 650px; margin: auto; background: #f9f9f9; padding: 30px; border-radius: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); animation: fadeInUp 1s ease forwards; }
-.billing-title { margin-top: 30px; font-size: 1.2rem; font-weight: 600; color: #ff4d4d; margin-bottom: 10px; }
-select, input, textarea { width: 100%; padding: 12px 15px; border-radius: 12px; border: 1px solid #ddd; font-size: 0.95rem; font-family: 'Poppins', sans-serif; outline: none; transition: border 0.3s ease, box-shadow 0.3s ease; }
-select:focus, input:focus, textarea:focus { border-color: #ff4d4d; box-shadow: 0 0 0 3px rgba(255,77,77,0.2); }
-.form-group { margin-bottom: 20px; }
-.form-group-inline { display: flex; gap: 15px; }
-.form-group-inline div { flex: 1; }
-.order button.btn { width: 100%; border: none; cursor: pointer; }
-
-#thank-you { display: none; text-align: center; background: #fff; padding: 50px 30px; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); max-width: 650px; margin: auto; animation: fadeInUp 0.6s ease forwards; }
-#thank-you h3 { color: #ff4d4d; font-size: 2rem; margin-bottom: 15px; }
-#thank-you p { color: #555; font-size: 1.1rem; }
-
-/* TRACK MY ORDER */
-.track { padding: 60px 0; background: #f9f9f9; text-align: center; }
-.progress-container { display: flex; justify-content: space-between; position: relative; margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
-.progress-step { flex: 1; padding: 15px; border-radius: 12px; background: #ddd; color: #555; font-weight: 500; margin: 0 5px; transition: background 0.5s ease, color 0.5s ease; }
-.progress-step.active { background: #ff4d4d; color: white; }
-
 /* CONTACT */
 .contact { padding: 60px 0; background: #f9f9f9; }
 .contact-subtext { text-align: center; color: #555; margin-bottom: 30px; font-size: 1rem; }
-.contact-card { max-width: 600px; margin: auto; background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); animation: fadeInUp 1s ease forwards; }
+.contact-card { max-width: 600px; margin: auto; background: #fff; padding: 30px; border-radius: 20px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.form-group { margin-bottom: 20px; }
+input, textarea { width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #ddd; }
 
 /* FOOTER */
 footer { background: #ff4d4d; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px; }
 
-/* ANIMATIONS */
-@keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
-@keyframes fadeIn { 0% { opacity: 0; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); } }
-
-/* RESPONSIVE */
+/* MOBILE MENU */
 @media (max-width: 768px) {
-  /* Show hamburger, hide menu */
   .hamburger { display: block; }
-  nav { display: none; position: absolute; top: 70px; right: 0; background: white; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 0 0 10px 10px; }
+  nav { display: none; position: absolute; top: 70px; right: 0; width: 100%; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 0 0 10px 10px; animation: slideDown 0.3s ease forwards; }
   nav ul { flex-direction: column; padding: 15px 0; gap: 15px; align-items: center; }
   nav.active { display: block; }
-
-  /* HERO */
-  .hero-content { flex-direction: column; text-align: center; gap: 20px; }
+  .hero-content { flex-direction: column; text-align: center; }
   .hero-text h1 { font-size: 2rem; }
-  .hero-text p { font-size: 0.95rem; }
-  .hero-image img { max-width: 100%; height: auto; }
-
-  /* MENU CARDS */
-  .menu-grid { grid-template-columns: 1fr; }
-
-  /* FEATURES */
-  .features-grid { grid-template-columns: 1fr; }
-
-  /* ORDER FORM */
-  .form-group-inline { flex-direction: column; gap: 10px; }
-
-  /* TRACK ORDER */
-  .progress-container { flex-direction: column; gap: 10px; }
-  .progress-step { margin: 0; width: 100%; }
-
-  /* CONTACT */
-  .contact-card { padding: 20px; }
+  .hero-image img { max-width: 100%; }
 }
 
-@media (max-width: 480px) {
-  .hero-text h1 { font-size: 1.6rem; }
-  .btn { padding: 8px 16px; font-size: 0.9rem; }
-  .section-title { font-size: 1.5rem; }
+/* Slide-down animation */
+@keyframes slideDown {
+  0% { transform: translateY(-10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
