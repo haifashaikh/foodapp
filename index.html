@@ -24,7 +24,6 @@
           <li><a href="#menu">Menu</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#order" class="btn">Order Now</a></li>
         </ul>
       </nav>
     </div>
@@ -105,11 +104,8 @@
 
   <!-- JS -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+    document.getElementById('hamburger').addEventListener('click', function () {
+      document.getElementById('nav-menu').classList.toggle('active');
     });
   </script>
 
