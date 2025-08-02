@@ -10,19 +10,26 @@
 <body>
   <!-- HEADER -->
   <header>
-    <div class="container header-container">
-      <div class="logo">🍴 Foodie</div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <a href="javascript:void(0)" class="btn" onclick="showOrderSection()">Order Now</a>
+  <div class="container header-container">
+    <div class="logo">🍴 Foodie</div>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+      ☰
     </div>
-  </header>
+
+    <!-- Navigation Menu -->
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#order" class="btn">Order Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <!-- HERO -->
   <section class="hero">
@@ -241,3 +248,4 @@
   </script>
 </body>
 </html>
+
